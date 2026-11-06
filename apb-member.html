@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>APB Member Registration | 5th East African Broadcasters Convention</title>
+  <meta name="description" content="Dedicated registration for APB Members. Verify your membership and secure your pass.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+  <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .form-step { display: none; animation: fadeIn 0.4s ease-out; }
+    .form-step.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .summary-card { background: var(--slate-50); padding: 32px; border-radius: 16px; border: 1px solid var(--border-light); margin-bottom: 32px; }
+    .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .summary-item { display: flex; flex-direction: column; gap: 4px; }
+    .summary-label { font-weight: 700; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .summary-value { font-weight: 600; color: var(--navy); font-size: 1rem; }
+    
+    .total-summary { border-top: 1px solid var(--border-subtle); margin-top: 24px; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; }
+    .total-summary .label { font-weight: 800; font-size: 1.1rem; color: var(--navy); }
+    .total-summary .value { font-weight: 900; font-size: 1.6rem; color: var(--royal-blue); }
+
+    .payment-instruction-box { background: #fff; border: 1px solid var(--border-light); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+    .verification-alert { background: #fff4e5; border: 1px solid #ffd580; padding: 12px 16px; border-radius: 8px; font-size: 0.9rem; color: #664d03; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo-text" href="/">
+    <img src="/images/APB_LOGO.png" alt="APB Logo" class="logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/register.html">Register</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="form-page">
+  <div class="container">
+    <div style="text-align: center; margin: 60px 0;">
+      <h1 style="font-size: 2.8rem; font-weight: 800; color: var(--navy); margin-bottom: 12px; font-family: 'Outfit', sans-serif;">APB Member Registration</h1>
+      <p style="color: var(--text-secondary); font-size: 1.1rem;">Special rate for verified 2026 Paid Up Members</p>
+    </div>
+
+    <div class="form-card">
+        <div class="stepper">
+          <div class="step-item active" id="step-1">
+            <div class="step-circle">1</div>
+            <span class="step-label">Verification</span>
+          </div>
+          <div class="stepper-line"></div>
+          <div class="step-item" id="step-2">
+            <div class="step-circle">2</div>
+            <span class="step-label">Review</span>
+          </div>
+        </div>
+
+        <!-- STEP 1: Details -->
+        <div class="form-step active" id="form-step-1">
+            <div id="standard-attendance-section" style="margin-bottom: 32px;">
+                <div class="form-section-header">
+                    <div class="icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+                    <h3>1. Member Details</h3>
+                </div>
+                <div style="background: var(--slate-50); padding: 24px; border-radius: 12px; border: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                    <div>
+                        <div style="font-weight: 800; color: var(--navy); font-size: 1.1rem;">APB Member Rate</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Exclusive discount for verified members</div>
+                    </div>
+                    <div style="font-weight: 900; font-size: 1.4rem; color: var(--royal-blue);">Free</div>
+                </div>
+            </div>
+
+            <div class="form-section active">
+              <div class="form-row">
+                <div class="form-group"><label>First Name <span class="required-star">*</span></label><input type="text" id="firstName" placeholder="First Name" required></div>
+                <div class="form-group"><label>Last Name <span class="required-star">*</span></label><input type="text" id="lastName" placeholder="Last Name" required></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Email Address <span class="required-star">*</span></label><input type="email" id="email" required></div>
+                <div class="form-group"><label>Phone Number <span class="required-star">*</span></label><input type="tel" id="phone" required></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Organization <span class="required-star">*</span></label><input type="text" id="organization" required></div>
+                <div class="form-group"><label>Job Title <span class="required-star">*</span></label><input type="text" id="jobTitle" required></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Gender <span class="required-star">*</span></label>
+                  <select id="gender" required><option value="">Select</option><option>Male</option><option>Female</option></select>
+                </div>
+                <div class="form-group"><label>Age Range <span class="required-star">*</span></label>
+                  <select id="ageRange" required><option value="">Select</option><option>18-34</option><option>35-50</option><option>50+</option></select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Location / County <span class="required-star">*</span></label>
+                  <select id="county" required>
+                    <option value="">Select County</option>
+                    <option>Nairobi</option><option>Mombasa</option><option>Kisumu</option><option>Nakuru</option><option>Kiambu</option><option>Uasin Gishu</option><option>Others</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                 <div class="form-group"><label>Country <span class="required-star">*</span></label><input type="text" id="countryRes" value="Kenya" required></div>
+              </div>
+            </div>
+        </div>
+
+        <!-- STEP 2: Review -->
+        <div class="form-step" id="form-step-2">
+          <div class="form-section-header" style="justify-content: center; margin-bottom: 24px;"><h3>Review Member Details</h3></div>
+          <div class="summary-card">
+            <div class="summary-grid">
+              <div class="summary-item"><span class="summary-label">Full Name</span><span class="summary-value" id="v-name">—</span></div>
+              <div class="summary-item"><span class="summary-label">Organization</span><span class="summary-value" id="v-org">—</span></div>
+              <div class="summary-item"><span class="summary-label">Email</span><span class="summary-value" id="v-email-val">—</span></div>
+              <div class="summary-item"><span class="summary-label">Phone</span><span class="summary-value" id="v-phone">—</span></div>
+              <div class="summary-item"><span class="summary-label">Category</span><span class="summary-value">APB Member Rate</span></div>
+            </div>
+            <div class="total-summary">
+                <span class="label">Total Amount</span>
+                <span class="value">Free</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="form-actions">
+            <button type="button" id="prevBtn" class="btn-secondary" style="display:none;">← Back</button>
+            <button type="button" id="nextBtn" class="btn-primary">Next Step →</button>
+        </div>
+
+        <!-- SUCCESS SCREEN -->
+        <div id="success-screen" style="display: none; text-align: center;">
+            <div style="font-size: 4rem; margin-bottom: 24px;">🎉</div>
+            <h2 style="font-size: 2rem; margin-bottom: 12px;">Registration Successful!</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 32px;">Welcome to the convention. Your member registration has been processed successfully.</p>
+            <div class="summary-card" style="text-align: left;">
+              <div class="summary-grid">
+                <div class="summary-item"><span class="summary-label">Reg ID</span><span class="summary-value" id="r-reg-id">—</span></div>
+                <div class="summary-item"><span class="summary-label">Receipt</span><span class="summary-value" id="r-receipt">—</span></div>
+              </div>
+            </div>
+            <a href="/" class="btn-primary" style="display: inline-block;">Back to Homepage</a>
+        </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer-premium" style="margin-top: 80px;">
+  <div class="container footer-grid" style="text-align: center;">
+      <img src="/images/APB_LOGO.png" alt="APB Logo" class="logo-img" style="height: 40px; margin-bottom: 16px;">
+      <p style="font-size: 0.9rem; color: var(--text-muted);">&copy; 2026 Association of Professional Broadcasters Kenya.</p>
+  </div>
+</footer>
+
+<script src="/js/apb-member.js?v=1.2"></script>
+</body>
+</html>
